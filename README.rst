@@ -4,13 +4,13 @@ socorro-siggen
 
 This is an extraction of the Socorro crash signature generation code.
 
-:Code: https://github.com/willkg/socorro-siggen
+:Code: https://github.com/mozilla-services/socorro-siggen
 :Documentation: Check the ``README.rst`` file
 :Changelog: Check the ``HISTORY.rst`` file
-:Issue tracker: https://github.com/willkg/socorro-siggen/issues
+:Issue tracker: https://github.com/mozilla-services/socorro-siggen/issues
 :License: MPLv2
 :Status: Stable
-:Community Participation Guidelines: `<https://github.com/willkg/socorro-siggen/blob/main/CODE_OF_CONDUCT.md>`_
+:Community Participation Guidelines: `<https://github.com/mozilla-services/socorro-siggen/blob/main/CODE_OF_CONDUCT.md>`_
 
 
 Installing

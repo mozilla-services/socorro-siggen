@@ -4,7 +4,5 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
-    reviewers:
-      - "willkg"
+      interval: "weekly"
     rebase-strategy: "disabled"
