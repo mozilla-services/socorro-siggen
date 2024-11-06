@@ -23,9 +23,9 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-urls.Homepage = "https://github.com/willkg/socorro-siggen"
-urls.Source = "https://github.com/willkg/socorro-siggen"
-urls.Issues = "https://github.com/willkg/socorro-siggen"
+urls.Homepage = "https://github.com/mozilla-services/socorro-siggen"
+urls.Source = "https://github.com/mozilla-services/socorro-siggen"
+urls.Issues = "https://github.com/mozilla-services/socorro-siggen/issues"
 
 [project.scripts]
 signify = "siggen.cmd_signify:main"
@@ -38,7 +38,6 @@ cli = [
 ]
 dev = [
     "build",
-    "check-manifest",
     "pytest",
     "requests<3",
     "ruff",
@@ -50,7 +49,7 @@ dev = [
 
 
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 
@@ -74,12 +73,12 @@ legacy_tox_ini = """
 isolated_build = True
 envlist =
     py39
+    py39-lint
+    py39-norequests
     py310
     py311
     py312
     py313
-    py39-lint
-    py39-norequests
 
 [gh-actions]
 python =
