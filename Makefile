@@ -1,5 +1,4 @@
 DEFAULT_GOAL := help
-PROJECT=siggen
 
 .PHONY: help
 help:
@@ -9,10 +8,10 @@ help:
 
 .PHONY: clean
 clean:  ## Clean build artifacts
-	rm -rf build dist ${PROJECT}.egg-info .tox .pytest-cache
+	rm -rf build dist siggen.egg-info .tox .pytest-cache
 	rm -rf docs/_build/*
-	find ${PROJECT}/ tests/ -name __pycache__ | xargs rm -rf
-	find ${PROJECT}/ tests/ -name '*.pyc' | xargs rm -rf
+	find siggen/ tests/ -name __pycache__ | xargs rm -rf
+	find siggen/ tests/ -name '*.pyc' | xargs rm -rf
 
 .PHONY: format
 format:  ## Format Python files
@@ -25,11 +24,3 @@ lint:  ## Lint files
 .PHONY: test
 test:  ## Run tests
 	tox
-
-.PHONY: checkrot
-checkrot:  ## Check package rot for dev dependencies
-	python -m venv ./tmpvenv/
-	./tmpvenv/bin/pip install -U pip
-	./tmpvenv/bin/pip install -r requirements-dev.txt
-	./tmpvenv/bin/pip list -o
-	rm -rf ./tmpvenv/
