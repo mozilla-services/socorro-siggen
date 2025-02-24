@@ -16,18 +16,30 @@ This is an extraction of the Socorro crash signature generation code.
 Installing
 ==========
 
-socorro-siggen is available on `PyPI <https://pypi.org/project/siggen/>`_. You
-can install for library usage with::
+socorro-siggen is available on `PyPI <https://pypi.org/project/siggen/>`_.
+
+pip
+---
+
+Install library::
 
     $ pip install siggen
 
-You can install for cli usage with::
+Install library with command-line interface::
 
     $ pip install 'siggen[cli]'
 
-Install for hacking::
 
-    $ pip install -r requirements-dev.txt
+uv
+--
+
+Install library::
+
+    $ uv tool install siggen
+
+Install library with command-line interface::
+
+    $ uv tool install 'siggen[cli]'
 
 
 Versioning
@@ -37,9 +49,9 @@ siggen is an extraction of the signature generation code in Socorro. If you are
 running signature generation on crash data and you want signatures to match
 equivalent crash reports in Socorro, then you need to keep siggen up-to-date.
 
-siggen uses a calver scheme:
+siggen uses a calver scheme::
 
-MAJOR.MINOR.yyyymmdd
+    MAJOR.MINOR.yyyymmdd
 
 * MAJOR: indicates incompatible API changes -- listed as "big changes" in
   HISTORY.rst
@@ -295,3 +307,18 @@ That produces this output::
       "proto_signature": "SomeFunc | SomeOtherFunc",
       "signature": "SomeFunc"
     }
+
+
+Development
+===========
+
+Requirements: Python, `uv <https://docs.astral.sh/uv/`>__, `just
+<https://just.systems/>`__
+
+Create a development environment::
+
+    $ just devenv
+
+View `just <https://just.systems/>`__ recipes::
+
+    $ just
